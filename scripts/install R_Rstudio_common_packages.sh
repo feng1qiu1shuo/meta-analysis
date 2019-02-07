@@ -1,6 +1,6 @@
 #! bin/bash
 
-#install R Rstudio and common packages, may need sudo if error happen
+#install R Rstudio and common packages, may need sudo if error happen. staff after common package is optional
 
 # Install R
 sudo apt update
