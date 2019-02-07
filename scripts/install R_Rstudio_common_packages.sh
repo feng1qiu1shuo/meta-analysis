@@ -1,6 +1,8 @@
 #! bin/bash
 
-#install R Rstudio and common packages, may need sudo if error happen. staff after common package is optional
+#install R, Rstudio, git and common packages, may need sudo if error happen. staff after common package is optional
+#run this scripts before clone the repo
+
 
 # Install R
 sudo apt update
@@ -11,6 +13,11 @@ cd ~/Downloads
 wget https://download1.rstudio.org/rstudio-xenial-1.1.447-amd64.deb
 sudo gdebi rstudio-xenial-1.1.447-amd64.deb
 printf '\nexport QT_STYLE_OVERRIDE=gtk\n' | sudo tee -a ~/.profile
+
+
+# install github
+sudo apt-get install git
+
 
 # Install common packages
 R --vanilla << EOF
