@@ -1,6 +1,8 @@
 #! /bin/bash
 
-#set up rna-seq analysis environment and prepare arabidopsis alignment index
+#set up rna-seq analysis environment and prepare arabidopsis alignment index. 
+#Make sure you are at the top level of the clone 
+#IMPORTANT!!! have a look at line 42.
 
 # Download the Miniconda3 installer to your home directory (Only for LINUX or Cluster)
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh
@@ -38,7 +40,9 @@ conda install -c bioconda star --yes
 
 
 # Clone this repository with folder structure into the current working folder
-git clone https://github.com/twbattaglia/RNAseq-workflow RNA_Seq_workflow
+# if you clone from feng1qiu1shuo, the repository is already there, keep follow untouched
+# if not, delete the comment symbol and excute the follow command
+# git clone https://github.com/twbattaglia/RNAseq-workflow RNA_Seq_workflow
 
 # Change directory into the new folder
 cd RNA_Seq_workflow
