@@ -2,7 +2,7 @@
 
 #set up rna-seq analysis environment and prepare arabidopsis alignment index. 
 #make sure you have already done install_R_Rstudio_common_packages.sh and you are at
-#the root of meta-analysis repo
+#the root of meta-analysis repo, and delete the RNA-Seq_workflow folder
 
 
 #clone the working directories, the structure can been check by the URL
