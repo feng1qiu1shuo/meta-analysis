@@ -1,8 +1,26 @@
 #! /bin/bash
 
 #set up rna-seq analysis environment and prepare arabidopsis alignment index. 
+#First you need to do some setup to make scrits in scripts folder can be executed.
+#If you are using Ubuntu, do the following without the comment symbol #
+#cd 
+#nano .profile
+#export PATH="$PATH:$HOME/path to meta-analysis/scripts"  write this to the .profile, 
+#path to meta-analysis can be something like this git_temp/meta-analysis, the path after your username
+#press ctrl+x, press y, press enter
+#log out and log in Ubuntu
+#echo $PATH    you should be able see the path you just added
+#cd to the root of meta-analysis/scripts
+#ls -l     you will see the scripts are not executable
+#cd ..
+#chmod -R u+x scripts    
+#cd scripts
+#ls -l   now all the scripts in scripts folder can be execubed. to execube this .sh file,
+
+
 #make sure you have already done install_R_Rstudio_common_packages.sh and you are at
 #the root of meta-analysis repo, and delete the RNA-Seq_workflow folder
+
 
 
 #clone the working directories, the structure can been check by the URL

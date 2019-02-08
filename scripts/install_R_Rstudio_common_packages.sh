@@ -2,6 +2,7 @@
 
 #install R, Rstudio, git and common packages, may need sudo if error happen. staff after common package is optional
 #run this scripts before clone the repo, then clone the repo manually
+#manuly run this script, copy the command into terminal and run
 
 
 # Install R
