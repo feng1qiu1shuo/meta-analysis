@@ -4,11 +4,10 @@
 #First you need to do some setup to make scrits in scripts folder can be executed.
 #If you are using Ubuntu, do the following without the comment symbol #
 #cd 
-#nano .profile
-#export PATH="$PATH:$HOME/path to meta-analysis/scripts"  write this to the .profile, 
+#echo 'PATH="$HOME/path to meta-analysis/scripts:$PATH"' >> ~/.profile
+#$HOME is "equal" to /home/yourusername
 #path to meta-analysis can be something like this git_temp/meta-analysis, the path after your username
-#press ctrl+x, press y, press enter
-#log out and log in Ubuntu
+#source ~/.profile
 #echo $PATH    you should be able see the path you just added
 #cd to the root of meta-analysis/scripts
 #ls -l     you will see the scripts are not executable
@@ -20,6 +19,8 @@
 
 #make sure you have already done install_R_Rstudio_common_packages.sh and you are at
 #the root of meta-analysis repo, and delete the RNA-Seq_workflow folder
+#and close your browser when run this scripts
+#after finished, log out and log in ubuntu
 
 
 
@@ -39,10 +40,10 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/
 bash miniconda.sh -b -f -p ~/miniconda
 
 # Add miniconda to the system path
-echo 'PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bash_profile
+echo 'PATH="$HOME/miniconda/bin:$PATH"' >> ~/.profile
 
 # Source system file to activate miniconda
-source ~/.bash_profile
+source ~/.profile
 
 # Add bioinformatic channels for downloading required packages
 conda config --add channels conda-forge
@@ -50,8 +51,6 @@ conda config --add channels defaults
 conda config --add channels r
 conda config --add channels bioconda
 
-# Install git (if needed)
-conda install -c anaconda git wget --yes
 
 #install fastqc
 conda install -c bioconda fastqc --yes
@@ -65,10 +64,17 @@ conda install -c bioconda sortmerna --yes
 #install STAR
 conda install -c bioconda star --yes
 
-
-
-
-
+#install aspera-connect
+#close your browser when installation
+#after installation, it can be tested by https://test-connect.asperasoft.com/
+#can be manually load by ~/.aspera/connect/bin/asperaconnect  
+wget http://download.asperasoft.com/download/sw/connect/3.8.1/ibm-aspera-connect-3.8.1.161274-linux-g2.12-64.tar.gz
+tar -zxvf ibm-aspera-connect-3.8.1.161274-linux-g2.12-64.tar.gz
+./ibm-aspera-connect-3.8.1.161274-linux-g2.12-64.sh
+echo 'PATH="$HOME/.aspera/connect/bin:$PATH"' >> ~/.profile
+source ~/.profile
+rm ibm-aspera-connect-3.8.1.161274-linux-g2.12-64.tar.gz
+rm ibm-aspera-connect-3.8.1.161274-linux-g2.12-64.sh
 
 
 # Download the sortmerna rRNAdatabase package (~2min) into sortmerna_db folder
@@ -118,10 +124,5 @@ STAR \
 --runThreadN 4
 
 
-
-
-#as lots of data to download, will modify this later
-#wget -P input/ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR137/001/SRR1374921/SRR1374921.fastq.gz
-#wget -P input/ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR137/002/SRR1374922/SRR1374922.fastq.gz
 
 

@@ -1,8 +1,9 @@
 #! bin/bash
 
 #install R, Rstudio, git and common packages, may need sudo if error happen. staff after common package is optional
+#if you do not know how to run a scrit, just manually copy each command to command line terminal and press enter
 #run this scripts before clone the repo, then clone the repo manually
-#manuly run this script, copy the command into terminal and run
+
 
 
 # Install R
